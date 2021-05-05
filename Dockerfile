@@ -26,7 +26,7 @@ ENV PATH="$HOME/.cargo/bin:$PATH"
 RUN cargo install diesel_cli --no-default-features --features postgres
 
 # Some transitive dependencies are very picky: We need the nightly build build on the 2018-04-14, meant for the 2018-04-15
-RUN rustup override default nightly
+RUN rustup override default nightly-2020-03-04
 # Set some environment variables
 ENV DATABASE_URL=postgres://gitpod@127.0.0.1/rust-web-with-rocket
 ENV ROCKET_ADDRESS=0.0.0.0
